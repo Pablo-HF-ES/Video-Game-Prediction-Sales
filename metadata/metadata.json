@@ -1,0 +1,88 @@
+{
+  "dataset_name": "Video Game Market Price, Popularity and Revenue Dataset",
+  "description": "Video game market intelligence dataset of 10,000 unique games across 6 platforms, simulated over 6 years with pricing, engagement, revenue estimates, and 80+ engineered features.",
+  "version": "1.0.0",
+  "created_at": "2026-05-19T20:22:06.546669+00:00Z",
+  "row_count": 5584706,
+  "column_count": 0,
+  "columns": [],
+  "schema": [
+    {
+      "name": "game_id",
+      "type": "string"
+    },
+    {
+      "name": "platform_code",
+      "type": "string"
+    },
+    {
+      "name": "obs_date",
+      "type": "date"
+    },
+    {
+      "name": "current_price_usd",
+      "type": "float",
+      "min": 0
+    },
+    {
+      "name": "concurrent_players",
+      "type": "int",
+      "min": 0
+    },
+    {
+      "name": "estimated_revenue_usd",
+      "type": "float",
+      "min": 0
+    },
+    {
+      "name": "target_breakout_hit",
+      "type": "int",
+      "values": [
+        0,
+        1
+      ]
+    }
+  ],
+  "feature_groups": {
+    "price": [
+      "current_price_usd",
+      "discount_pct",
+      "is_on_sale",
+      "price_volatility",
+      "launch_price_decay"
+    ],
+    "engagement": [
+      "concurrent_players",
+      "review_count",
+      "hype_score"
+    ],
+    "anomaly": [
+      "rating_drop_flag",
+      "fake_discount_flag",
+      "player_spike_flag",
+      "review_inflation_flag"
+    ],
+    "targets": [
+      "target_ccu_next_4w",
+      "target_revenue_next_4w",
+      "target_price_next_4w",
+      "target_breakout_hit",
+      "target_sleeper_hit",
+      "target_long_tail"
+    ]
+  },
+  "output_files": [
+    "data/full/videogames_full.csv.gz"
+  ],
+  "platform": "ML Data Platform v1.0.0",
+  "n_games": 10000,
+  "platforms": [
+    "PC",
+    "PlayStation 5",
+    "PlayStation 4",
+    "Xbox Series X/S",
+    "Xbox One",
+    "Nintendo Switch"
+  ],
+  "years_covered": 6
+}
